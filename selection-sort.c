@@ -20,14 +20,13 @@ int main(void) {
 
 // Time complexity: O(N)
 int find_smallest_num_index(int arr[], int arrSize, int startIndex) {
-	int smallestNum = arr[startIndex];
 	int smallestNumIndex = startIndex;
+
 	for (int i = startIndex + 1; i < arrSize; i++) {
 		int number = arr[i];
-		if (number < smallestNum) {
-			smallestNum = number;
-			smallestNumIndex = i;
-		}
+		int smallestNum = arr[smallestNumIndex];
+
+		if (number < smallestNum) smallestNumIndex = i;
 	}
 
 	return smallestNumIndex;
